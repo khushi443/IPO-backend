@@ -1,9 +1,14 @@
 from rest_framework.decorators import api_view
+from rest_framework import generics
 from rest_framework.response import Response
 from .models import IPO
 from .serializers import IPOSerializer
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
+
+class IPOListCreateView(generics.ListCreateAPIView):
+    queryset = IPO.objects.all()
+    serializer_class = IPOSerializer
 
 def test_api(request):
     return JsonResponse({'message': 'Hello from Django API!'})
