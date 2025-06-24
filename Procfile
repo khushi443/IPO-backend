@@ -1,1 +1,1 @@
-web: gunicorn ipo_backend.wsgi
+wed: gunicorn ipo_backend.wsgi
